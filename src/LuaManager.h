@@ -12,8 +12,8 @@ class LuaManager
 {
 	static vector<Move> moves;
 public:
-	static void SetDefence(lua_State *L);
-	static void SetAttack(lua_State *L);
+	static int SetDefence(lua_State *L);
+	static int SetAttack(lua_State *L);
 	static vector<Move> LoadPlayer(string nameFile);
 };
 

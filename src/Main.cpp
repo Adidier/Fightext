@@ -2,6 +2,7 @@
 #include <iostream>
 #include <SDL.h>
 #include "SDL_ttf.h"
+#include "KPlayer.h"
 
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
@@ -49,6 +50,8 @@ SDL_Texture* renderText(const std::string &message, const std::string &fontFile,
 }
 
 int main(int, char**) {
+	Player axel("Mex");
+
 	if (SDL_Init(SDL_INIT_VIDEO) != 0) {
 		std::cout<<"SDL_Init";
 		return 1;

@@ -63,10 +63,13 @@
     <ClCompile Include="src\core\KPlatform.cpp">
       <Filter>core</Filter>
     </ClCompile>
-    <ClCompile Include="LuaManager.cpp">
+    <ClCompile Include="src\KPlayer.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Moves.cpp">
+    <ClCompile Include="src\LuaManager.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moves.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -107,13 +110,13 @@
     <ClInclude Include="src\core\KPlatform.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="LuaManager.h">
+    <ClInclude Include="src\KPlayer.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="KPlayer.h">
+    <ClInclude Include="src\LuaManager.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Moves.h">
+    <ClInclude Include="src\Moves.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

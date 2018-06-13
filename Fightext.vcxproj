@@ -22,8 +22,6 @@
     <Text Include="src\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LuaManager.cpp" />
-    <ClCompile Include="Moves.cpp" />
     <ClCompile Include="src\base\IntroState.cpp" />
     <ClCompile Include="src\base\MenuState.cpp" />
     <ClCompile Include="src\base\PlayState.cpp" />
@@ -33,15 +31,15 @@
     <ClCompile Include="src\core\KObject.cpp" />
     <ClCompile Include="src\core\KPlatform.cpp" />
     <ClCompile Include="src\kalium.cpp" />
+    <ClCompile Include="src\KPlayer.cpp" />
+    <ClCompile Include="src\LuaManager.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\ManagerAction.cpp" />
+    <ClCompile Include="src\Moves.cpp" />
     <ClCompile Include="src\Parser.flex.cpp" />
     <ClCompile Include="src\Parser.tab.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="KPlayer.h" />
-    <ClInclude Include="LuaManager.h" />
-    <ClInclude Include="Moves.h" />
     <ClInclude Include="src\base\IntroState.h" />
     <ClInclude Include="src\base\MenuState.h" />
     <ClInclude Include="src\base\PlayState.h" />
@@ -51,7 +49,10 @@
     <ClInclude Include="src\core\KMacros.h" />
     <ClInclude Include="src\core\KObject.h" />
     <ClInclude Include="src\core\KPlatform.h" />
+    <ClInclude Include="src\KPlayer.h" />
+    <ClInclude Include="src\LuaManager.h" />
     <ClInclude Include="src\ManagerAction.h" />
+    <ClInclude Include="src\Moves.h" />
     <ClInclude Include="src\Parser.flex.h" />
     <ClInclude Include="src\Parser.tab.h" />
   </ItemGroup>
