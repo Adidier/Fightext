@@ -13,34 +13,108 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{156f1ea2-f066-41aa-b49a-52141790204f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{c7a52102-0e55-462b-aa60-d06ea69de4a8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
+    <Text Include="src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\kalium.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="ManagerAction.cpp">
+    <ClCompile Include="src\Main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Parser.flex.cpp">
+    <ClCompile Include="src\ManagerAction.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Parser.tab.cpp">
+    <ClCompile Include="src\Parser.flex.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Parser.tab.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\IntroState.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\MenuState.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\PlayState.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\KGameManager.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\KGameObject.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\KGameState.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\KObject.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\KPlatform.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaManager.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Moves.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ManagerAction.h">
+    <ClInclude Include="src\ManagerAction.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Parser.flex.h">
+    <ClInclude Include="src\Parser.flex.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Parser.tab.h">
+    <ClInclude Include="src\Parser.tab.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Parser.l" />
-    <None Include="Parser.y" />
+    <ClInclude Include="src\base\IntroState.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\MenuState.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\PlayState.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\KGameManager.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\KGameObject.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\KGameState.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\KMacros.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\KObject.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\KPlatform.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaManager.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="KPlayer.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Moves.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

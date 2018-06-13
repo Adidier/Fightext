@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -18,12 +18,49 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LuaManager.cpp" />
+    <ClCompile Include="Moves.cpp" />
+    <ClCompile Include="src\base\IntroState.cpp" />
+    <ClCompile Include="src\base\MenuState.cpp" />
+    <ClCompile Include="src\base\PlayState.cpp" />
+    <ClCompile Include="src\core\KGameManager.cpp" />
+    <ClCompile Include="src\core\KGameObject.cpp" />
+    <ClCompile Include="src\core\KGameState.cpp" />
+    <ClCompile Include="src\core\KObject.cpp" />
+    <ClCompile Include="src\core\KPlatform.cpp" />
+    <ClCompile Include="src\kalium.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\ManagerAction.cpp" />
+    <ClCompile Include="src\Parser.flex.cpp" />
+    <ClCompile Include="src\Parser.tab.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="KPlayer.h" />
+    <ClInclude Include="LuaManager.h" />
+    <ClInclude Include="Moves.h" />
+    <ClInclude Include="src\base\IntroState.h" />
+    <ClInclude Include="src\base\MenuState.h" />
+    <ClInclude Include="src\base\PlayState.h" />
+    <ClInclude Include="src\core\KGameManager.h" />
+    <ClInclude Include="src\core\KGameObject.h" />
+    <ClInclude Include="src\core\KGameState.h" />
+    <ClInclude Include="src\core\KMacros.h" />
+    <ClInclude Include="src\core\KObject.h" />
+    <ClInclude Include="src\core\KPlatform.h" />
+    <ClInclude Include="src\ManagerAction.h" />
+    <ClInclude Include="src\Parser.flex.h" />
+    <ClInclude Include="src\Parser.tab.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{028E4BB6-659D-498F-8941-C0FB36D0C237}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Fightext</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -88,11 +125,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\ExternalLibs\FlexBision;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\ExternalLibs\FlexBision;.\ExternalLibs\Lua\include;.\ExternalLibs\SDL2_ttf-2.0.14\include;.\ExternalLibs\SDL2-2.0.8\include;.\src\core;.\src\base;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>.\ExternalLibs\Lua\lib;C:\Users\Fear\Fightext\ExternalLibs\SDL2-2.0.8\lib\x86;.\ExternalLibs\SDL2_ttf-2.0.14\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>lua51.lib;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -139,21 +178,6 @@
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="ManagerAction.cpp" />
-    <ClCompile Include="Parser.flex.cpp" />
-    <ClCompile Include="Parser.tab.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ManagerAction.h" />
-    <ClInclude Include="Parser.flex.h" />
-    <ClInclude Include="Parser.tab.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Parser.l" />
-    <None Include="Parser.y" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
