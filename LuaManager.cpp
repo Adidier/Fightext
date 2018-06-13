@@ -36,9 +36,9 @@ vector<Move> LuaManager::LoadPlayer(string nameFile)
 	luaopen_math(L);
 
 	lua_pushcfunction(L, SetDefence);
-	lua_setglobal(L, "write");
+	lua_setglobal(L, "setDefence");
 	lua_pushcfunction(L, SetAttack);
-	lua_setglobal(L, "write");
+	lua_setglobal(L, "setAttack");
 
 	if (luaL_loadfile(L, nameFile.c_str()) || lua_pcall(L, 0, 0, 0))
 	{
