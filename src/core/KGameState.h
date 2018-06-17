@@ -3,6 +3,8 @@
 
 #include "KPlatform.h"
 
+class KPlatform;
+
 class KGameState {
 public:
     ~KGameState( void ) { }
@@ -17,13 +19,16 @@ public:
     void PushState( KGameState *state );
     void PopState( void );
     void RequestShutdown( void );
-
+	virtual bool Press(int key) { return false; };
     void SetScaleFactor(float fScaleFactor);
 protected:
     KGameState( void ) { }
+	KPlatform *oContext;
 private:
     KGameState( const KGameState& ) { }
     KGameState & operator = ( const KGameState& );
+
+	
 };
 #endif
 

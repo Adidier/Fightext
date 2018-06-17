@@ -72,6 +72,9 @@
     <ClCompile Include="src\Moves.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="src\core\KImage.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ManagerAction.h">
@@ -118,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="src\Moves.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\KImage.h">
+      <Filter>core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

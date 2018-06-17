@@ -2,7 +2,8 @@
 #include "KGameManager.h"
 
 
-void KGameState::Enter( KPlatform *oContext ){
+void KGameState::Enter( KPlatform *_oContext ){
+	oContext = _oContext;
 }
 
 void KGameState::SetScaleFactor(float fScaleFactor){

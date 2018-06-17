@@ -1,4 +1,6 @@
 #include "MenuState.h"
+#include "KPlatform.h"
+
 
 MenuState* MenuState::oMenuState;
 
@@ -38,6 +40,8 @@ MenuState::~MenuState( void )
 }
 
 bool MenuState::init( void ){
+
+	menuBackground = oContext->CreateImage("menu.png");
 	return true;
 }
 
@@ -47,11 +51,22 @@ void MenuState::Enter(KPlatform *oViewer) {
     init();
 }
 
+bool MenuState::Press(int key)
+{
+	KGameManager * kGameManager = KGameManager::getSingletonPtr();
+	kGameManager->ChangeState(PlayState::getSingletonPtr());;
 
+	return false;
+}
 
 void MenuState::Update( double dTimeElapsed )
 {
+	oContext->checkEvent(this, &KGameState::Press,SDLK_0);
 
+	oContext->RenderClear();
+
+	oContext->RenderImage(menuBackground,0,0);
+	oContext->RenderPresent();
 }
 
 

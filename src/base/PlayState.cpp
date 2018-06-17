@@ -29,7 +29,12 @@ void PlayState::Resume( void ) {
 
 void PlayState::Update( double dTimeElapsed ) {
 	
-	
+	oContext->checkEvent(this, &KGameState::Press, SDLK_0);
+
+	oContext->RenderClear();
+
+	oContext->RenderImage(menuBackground, 0, 0);
+	oContext->RenderPresent();
 }
 
 void PlayState::Exit( void ) {
@@ -53,10 +58,9 @@ void PlayState::loadMapSize(){
 }
 
 bool PlayState::init( void ){
-	KGameManager * kGameManager = KGameManager::getSingletonPtr();
-	this->dDoubleTapTime   =  DOUBLE_TAP_TIME;
 
-	this->iNumberOfTaps=0;
+	menuBackground = oContext->CreateImage("background.png");
+
 	return true;
 }
 
@@ -75,6 +79,8 @@ void PlayState::tapHandler(float dt){
  }
 
 void PlayState::Enter(KPlatform *_oViewer) {
+	oContext = _oViewer;
+	init();
 
 }
 

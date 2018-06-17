@@ -13,6 +13,7 @@ public:
     void Pause( void );
     void Resume( void );
     void Update( double lTimeElapsed );
+	bool Press(int key);
     static MenuState* getSingletonPtr( void );
 private: 
     MenuState( void );
@@ -20,6 +21,7 @@ private:
     MenuState & operator = ( const MenuState& );
     static MenuState *oMenuState;
 private:
+	KImage *menuBackground;
 };
 
 #endif

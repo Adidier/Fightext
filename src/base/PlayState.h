@@ -27,7 +27,8 @@ private:
 	PlayState & operator = ( const PlayState& );
 	static PlayState *oPlayState;
 private:
-    
+
+	KImage * menuBackground;
 
     std::string sMapName;
 

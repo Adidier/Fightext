@@ -28,6 +28,7 @@
     <ClCompile Include="src\core\KGameManager.cpp" />
     <ClCompile Include="src\core\KGameObject.cpp" />
     <ClCompile Include="src\core\KGameState.cpp" />
+    <ClCompile Include="src\core\KImage.cpp" />
     <ClCompile Include="src\core\KObject.cpp" />
     <ClCompile Include="src\core\KPlatform.cpp" />
     <ClCompile Include="src\kalium.cpp" />
@@ -46,6 +47,7 @@
     <ClInclude Include="src\core\KGameManager.h" />
     <ClInclude Include="src\core\KGameObject.h" />
     <ClInclude Include="src\core\KGameState.h" />
+    <ClInclude Include="src\core\KImage.h" />
     <ClInclude Include="src\core\KMacros.h" />
     <ClInclude Include="src\core\KObject.h" />
     <ClInclude Include="src\core\KPlatform.h" />
@@ -61,7 +63,7 @@
     <ProjectGuid>{028E4BB6-659D-498F-8941-C0FB36D0C237}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Fightext</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -126,13 +128,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\ExternalLibs\FlexBision;.\ExternalLibs\Lua\include;.\ExternalLibs\SDL2_ttf-2.0.14\include;.\ExternalLibs\SDL2-2.0.8\include;.\src\core;.\src\base;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\ExternalLibs\FlexBision;.\ExternalLibs\Lua\include;.\ExternalLibs\SDL2_ttf-2.0.14\include;.\ExternalLibs\SDL2-2.0.8\include;.\src\core;.\src\base;.\ExternalLibs\SDL2_image-2.0.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>.\ExternalLibs\Lua\lib;.\ExternalLibs\SDL2-2.0.8\lib\x86;.\ExternalLibs\SDL2_ttf-2.0.14\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>lua51.lib;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>.\ExternalLibs\Lua\lib;.\ExternalLibs\SDL2-2.0.8\lib\x86;.\ExternalLibs\SDL2_ttf-2.0.14\lib\x86;.\ExternalLibs\SDL2_image-2.0.3\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>lua51.lib;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
