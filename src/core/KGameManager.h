@@ -20,8 +20,6 @@ public:
 	void UpdateState(void);
 	void RequestShutdown(void);
 	static KGameManager* getSingletonPtr(void);
-public:
-	// ValueMap *getListLevels();
 
 private:
 	KGameManager(void);

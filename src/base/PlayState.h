@@ -20,17 +20,17 @@ public:
     static PlayState* getSingletonPtr( void );
     void loadResources(std::string level);
 
-    
+	bool Press(int key);
 private:
 	PlayState( void );
 	PlayState( const PlayState& ) { }
 	PlayState & operator = ( const PlayState& );
 	static PlayState *oPlayState;
-private:
-
+protected:
+	
 	KImage * menuBackground;
 
-    std::string sMapName;
+    std::string consoleBuffer;
 
     bool bTouchHasMoved;
     double dTouchStart;

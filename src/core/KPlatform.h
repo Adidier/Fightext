@@ -38,7 +38,7 @@ public:
 	
 	
 	
-	void checkEvent(KGameState *obj,bool (KGameState::*f)(int ), int event);
+	void checkEvent(KGameState *obj,bool (KGameState::*f)(int ));
     void setSizeResourceBackgruound(int fHeight,int fWidth);
 
 	void RenderClear();
@@ -46,7 +46,7 @@ public:
 	void RenderPresent();
 
 	KImage* CreateImage(std::string name);
-
+	void renderText(const std::string &message, const std::string &fontFile);
 private:
 	SDL_Texture * renderText(const std::string &message, const std::string &fontFile, SDL_Color color, int fontSize, SDL_Renderer *renderer);
 	void renderTexture(KImage *tex, int x, int y);

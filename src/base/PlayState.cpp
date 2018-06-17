@@ -27,13 +27,30 @@ void PlayState::Resume( void ) {
 
 }
 
+bool PlayState::Press(int key)
+{
+	if(key>= '0' && key <= 'z')
+		consoleBuffer += (char)key;
+	else if(key == '\r')
+	{
+		std::cout << "do";
+	}
+	else if (key == '\b')
+	{
+		consoleBuffer = consoleBuffer.substr(0, consoleBuffer.size() - 1);
+	}
+
+	return false;
+}
+
 void PlayState::Update( double dTimeElapsed ) {
 	
-	oContext->checkEvent(this, &KGameState::Press, SDLK_0);
+	oContext->checkEvent(this, &KGameState::Press);
 
 	oContext->RenderClear();
 
 	oContext->RenderImage(menuBackground, 0, 0);
+	oContext->renderText(consoleBuffer.c_str(), "sample.ttf");
 	oContext->RenderPresent();
 }
 

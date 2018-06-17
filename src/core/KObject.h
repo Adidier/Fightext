@@ -3,18 +3,7 @@
 
 #include <string>
 
-enum ObjectType
-{
-	Player,
-	Enemie
-};
 
-
-enum ObjectState
-{
-	Active,
-	Death
-};
 
 class KObject
 {

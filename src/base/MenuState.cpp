@@ -61,7 +61,7 @@ bool MenuState::Press(int key)
 
 void MenuState::Update( double dTimeElapsed )
 {
-	oContext->checkEvent(this, &KGameState::Press,SDLK_0);
+	oContext->checkEvent(this, &KGameState::Press);
 
 	oContext->RenderClear();
 
