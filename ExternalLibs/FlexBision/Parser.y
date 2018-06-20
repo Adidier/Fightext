@@ -11,13 +11,19 @@
 	}
 %}
 
+%union
+{
+	char	*sval;
+};
+%token <sval> IDENTIFIER
+
+%token EQUAL
 %token ATTACK
-%token PARAMETER
 %token EOL
 
 %%
 action: 
-| ATTACK { ManagerAction::getPtr()->SetAttack("sad"); }
+| ATTACK EQUAL IDENTIFIER {  ManagerAction::getPtr()->SetAttack(yytext); }
 ;
 
 %%

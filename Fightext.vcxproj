@@ -58,12 +58,16 @@
     <ClInclude Include="src\Parser.flex.h" />
     <ClInclude Include="src\Parser.tab.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ExternalLibs\FlexBision\Parser.l" />
+    <None Include="ExternalLibs\FlexBision\Parser.y" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{028E4BB6-659D-498F-8941-C0FB36D0C237}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Fightext</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,13 +132,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\ExternalLibs\FlexBision;.\ExternalLibs\Lua\include;.\ExternalLibs\SDL2_ttf-2.0.14\include;.\ExternalLibs\SDL2-2.0.8\include;.\src\core;.\src\base;.\ExternalLibs\SDL2_image-2.0.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\src\;.\ExternalLibs\FlexBision;.\ExternalLibs\Lua\include;.\ExternalLibs\SDL2_ttf-2.0.14\include;.\ExternalLibs\SDL2-2.0.8\include;.\src\coreDIRECTORIO MALO;.\src\base;.\ExternalLibs\SDL2_image-2.0.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>.\ExternalLibs\Lua\lib;.\ExternalLibs\SDL2-2.0.8\lib\x86;.\ExternalLibs\SDL2_ttf-2.0.14\lib\x86;.\ExternalLibs\SDL2_image-2.0.3\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>lua51.lib;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>lua51.libmalo;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

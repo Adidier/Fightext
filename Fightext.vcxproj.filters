@@ -126,4 +126,12 @@
       <Filter>core</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ExternalLibs\FlexBision\Parser.l">
+      <Filter>Archivos de origen</Filter>
+    </None>
+    <None Include="ExternalLibs\FlexBision\Parser.y">
+      <Filter>Archivos de origen</Filter>
+    </None>
+  </ItemGroup>
 </Project>

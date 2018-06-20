@@ -5,10 +5,11 @@ using namespace std;
 
 #define  LOG_TAG    "main"
 
+SDL_Renderer *KPlatform::renderer;
 KPlatform::KPlatform() {
 
-	iResourceHeight=480;
-	iResourceWidth=600; 
+	iResourceHeight=700;
+	iResourceWidth=950; 
 
 	if (SDL_Init(SDL_INIT_VIDEO) != 0) {
 		std::cout << "SDL_Init";
@@ -96,7 +97,7 @@ void KPlatform::renderText(const std::string &message, const std::string &fontFi
 	if (message.size() == 0)
 		return;
 
-	SDL_Color color = { 255, 255, 255, 255 };
+	SDL_Color color = { 0, 0, 0, 255 };
 	SDL_Texture *image = renderText(message.c_str(),"sample.ttf",color, 64, renderer);
 	SDL_Rect dst;
 	dst.x = 0;

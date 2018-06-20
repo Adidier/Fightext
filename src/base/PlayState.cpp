@@ -1,8 +1,9 @@
 #include "PlayState.h"
+#include "Parser.flex.h"
+#include "Parser.tab.h"
 
 
-
-PlayState* PlayState::oPlayState;
+//PlayState* PlayState::oPlayState; descomentar
 
 PlayState* PlayState::getSingletonPtr( void ){
     if( !oPlayState ) {
@@ -27,13 +28,21 @@ void PlayState::Resume( void ) {
 
 }
 
+bool PlayState::Parser(string command)
+{
+	command = "ataque=aa\n";
+	yy_scan_string((char *)command.c_str());
+	yyparse();
+	return false;
+}
+
 bool PlayState::Press(int key)
 {
-	if(key>= '0' && key <= 'z')
+	if(key>= '0' && key <= 'z' || key == ' ')
 		consoleBuffer += (char)key;
 	else if(key == '\r')
 	{
-		std::cout << "do";
+		Parser(consoleBuffer+"\n");
 	}
 	else if (key == '\b')
 	{
@@ -50,7 +59,11 @@ void PlayState::Update( double dTimeElapsed ) {
 	oContext->RenderClear();
 
 	oContext->RenderImage(menuBackground, 0, 0);
+	oContext->RenderImage(player1->getImage(), 700, 0);
+	oContext->RenderImage(player2->getImage(), 0, 300);
 	oContext->renderText(consoleBuffer.c_str(), "sample.ttf");
+
+
 	oContext->RenderPresent();
 }
 
@@ -66,14 +79,6 @@ PlayState::~PlayState( void ){
 	
 }
 
-void PlayState::loadResources( std::string level){ //hacer una clase especial para esto
-	
-}
-
-void PlayState::loadMapSize(){
-
-}
-
 bool PlayState::init( void ){
 
 	menuBackground = oContext->CreateImage("background.png");
@@ -81,22 +86,10 @@ bool PlayState::init( void ){
 	return true;
 }
 
-long PlayState::millisecondNow(){
-     return 0;
-}
-
-
-void PlayState::tapHandler(float dt){
- }
-
- void PlayState::configUserEvents(){
- }
-
- void PlayState::initBackGroundSound(std::string oSound){
- }
-
 void PlayState::Enter(KPlatform *_oViewer) {
 	oContext = _oViewer;
+	player1 = new Player("mexican");
+	player2 = new Player("american");
 	init();
 
 }

@@ -1,11 +1,12 @@
-#ifndef _INTRO_STATE_H_
-#define _INTRO_STATE_H_
+#ifndef _PLAYER_STATE_H_
+#define _PLAYER_STATE_H_
 
 #include "string"
 #include "KGameState.h"
 #include "MenuState.h"
 #include "KGameManager.h"
 #include "KMacros.h"
+#include "KPlayer.h"
 
 class PlayState : public KGameState 
 {
@@ -18,33 +19,23 @@ public:
     void Resume( void );
     void Update( double lTimeElapsed );
     static PlayState* getSingletonPtr( void );
-    void loadResources(std::string level);
 
 	bool Press(int key);
+	bool Parser(string command);
 private:
 	PlayState( void );
 	PlayState( const PlayState& ) { }
 	PlayState & operator = ( const PlayState& );
 	static PlayState *oPlayState;
 protected:
-	
 	KImage * menuBackground;
-
     std::string consoleBuffer;
-
-    bool bTouchHasMoved;
-    double dTouchStart;
-    double dDoubleTapTime;
-    int iNumberOfTaps;
+	Player *player1;
+	Player *player2;
     KPlatform *oViewer;
 
-    bool bPlayerSelected;
-
-    long millisecondNow();
-    void tapHandler(float dt);
-    void loadMapSize();
-    void configUserEvents();
-    void initBackGroundSound(std::string oSound);
+    
+   
 };
 
 #endif

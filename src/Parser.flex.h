@@ -201,8 +201,6 @@ void *yyalloc ( yy_size_t  );
 void *yyrealloc ( void *, yy_size_t  );
 void yyfree ( void *  );
 
-/* Begin user sect3 */
-
 extern int yylineno;
 
 extern char *yytext;
@@ -463,9 +461,8 @@ extern int yylex (void);
 #undef yyTABLES_NAME
 #endif
 
-#line 14 "Parser.l"
+#line 18 "Parser.l"
 
-
-#line 469 "..\\..\\src\\Parser.flex.h"
+#line 466 "..\\..\\src\\Parser.flex.h"
 #undef yyIN_HEADER
 #endif /* yyHEADER_H */

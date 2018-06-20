@@ -45,7 +45,7 @@ public:
 	void RenderImage(KImage *image, int x, int y);
 	void RenderPresent();
 
-	KImage* CreateImage(std::string name);
+	static KImage* CreateImage(std::string name);
 	void renderText(const std::string &message, const std::string &fontFile);
 private:
 	SDL_Texture * renderText(const std::string &message, const std::string &fontFile, SDL_Color color, int fontSize, SDL_Renderer *renderer);
@@ -59,6 +59,6 @@ private:
 	int iResourceHeight;
 	int iResourceWidth;
 	SDL_Window *window;
-	SDL_Renderer *renderer;
+	static SDL_Renderer *renderer;
 }; 
 #endif 

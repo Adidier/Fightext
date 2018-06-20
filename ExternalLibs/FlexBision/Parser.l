@@ -5,9 +5,13 @@
 
 %}
 
+identifier		[_a-zA-Z0-9]+
+
 %%
-		                 
+"="			{ return EQUAL; }
 "ataque"  { return ATTACK; }
 \n		  {return EOL;}
 
-%%
+{identifier}	{return(IDENTIFIER);}
+
+
