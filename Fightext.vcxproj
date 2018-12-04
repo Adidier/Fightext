@@ -132,13 +132,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\src\;.\ExternalLibs\FlexBision;.\ExternalLibs\Lua\include;.\ExternalLibs\SDL2_ttf-2.0.14\include;.\ExternalLibs\SDL2-2.0.8\include;.\src\coreDIRECTORIO MALO;.\src\base;.\ExternalLibs\SDL2_image-2.0.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\src\;.\ExternalLibs\FlexBision;.\ExternalLibs\Lua\include;.\ExternalLibs\SDL2_ttf-2.0.14\include;.\ExternalLibs\SDL2-2.0.8\include;.\src\coreDIRECTORIO MALO;.\src\base;.\ExternalLibs\SDL2_image-2.0.3\include;.\src\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>.\ExternalLibs\Lua\lib;.\ExternalLibs\SDL2-2.0.8\lib\x86;.\ExternalLibs\SDL2_ttf-2.0.14\lib\x86;.\ExternalLibs\SDL2_image-2.0.3\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>lua51.libmalo;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>lua51.lib;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

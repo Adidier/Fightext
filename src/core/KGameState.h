@@ -10,7 +10,7 @@ public:
     ~KGameState( void ) { }
 
     virtual bool init( void ) = 0;
-    virtual void Enter( KPlatform *oContext )  
+	virtual void Enter(KPlatform *oContext);
     virtual void Exit( void )   = 0;
     virtual void Pause( void )  = 0;
     virtual void Resume( void ) = 0;

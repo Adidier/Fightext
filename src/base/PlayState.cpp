@@ -3,7 +3,7 @@
 #include "Parser.tab.h"
 
 
-//PlayState* PlayState::oPlayState; descomentar
+PlayState* PlayState::oPlayState;
 
 PlayState* PlayState::getSingletonPtr( void ){
     if( !oPlayState ) {

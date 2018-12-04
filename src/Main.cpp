@@ -11,8 +11,8 @@ int main(int, char**) {
 	KGameManager * kGameManager = KGameManager::getSingletonPtr();
 	try
 	{
-		kGameManager->PushState(MenuState::getSingletonPtr())
-		kGameManager->UpdateState);
+		kGameManager->PushState(MenuState::getSingletonPtr());
+		kGameManager->UpdateState();
 	}
 	catch (...)
 	{
