@@ -41,7 +41,7 @@ MenuState::~MenuState( void )
 
 bool MenuState::init( void ){
 
-	menuBackground = oContext->CreateImage("menu.png");
+	menuBackground = oContext->CreateImage("./Assets/backgrounds/Menu.jpg");
 	return true;
 }
 

@@ -18,12 +18,23 @@
 %token <sval> IDENTIFIER
 
 %token EQUAL
+%token AYUDARLA
+%token ALEJARTE
+%token VAMOS
+%token SOLA
+%token CONTINUAR
+%token ADELANTARSE
 %token ATTACK
 %token EOL
 
 %%
 action: 
-| ATTACK EQUAL IDENTIFIER {  ManagerAction::getPtr()->SetAttack(yytext); }
+| AYUDARLA EOL {  }
+| ALEJARTE EOL {  }
+| VAMOS EOL { }
+| SOLA EOL { }
+| CONTINUAR EOL { }
+| ADELANTARSE EOL {  }
 ;
 
 %%

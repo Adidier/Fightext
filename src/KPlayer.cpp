@@ -4,17 +4,17 @@
 
 
 
-Player::Player(string nameFile)
+History::History(string nameFile)
 {
-	vector<Move> moves = LuaManager::LoadPlayer(nameFile+".lua");
+	history = LuaManager::LoadPlayer(nameFile+".lua");
 	img = KPlatform::CreateImage(nameFile+".png");
 }
 
-KImage *Player::getImage()
+KImage *History::getImage()
 {
 	return img;
 }
 
-Player::~Player()
+History::~History()
 {
 }

@@ -27,11 +27,14 @@ private:
 	PlayState( const PlayState& ) { }
 	PlayState & operator = ( const PlayState& );
 	static PlayState *oPlayState;
+	std::string currentText;
+	int currentTextIndex = 0;
 protected:
 	KImage * menuBackground;
-    std::string consoleBuffer;
-	Player *player1;
-	Player *player2;
+	KImage * waifu;
+
+	std::string consoleBuffer;
+	History *history;
     KPlatform *oViewer;
 
     

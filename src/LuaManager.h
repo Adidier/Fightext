@@ -1,19 +1,18 @@
 #pragma once
 #include "lua.hpp"
-#include<vector>
+#include<map>
 #include<string>
 #include "Moves.h"
 
 using namespace std;
 
-class Player;
+class History;
 
 class LuaManager
 {
-	static vector<Move> moves;
+	static map<string,string> history;
 public:
-	static int SetDefence(lua_State *L);
-	static int SetAttack(lua_State *L);
-	static vector<Move> LoadPlayer(string nameFile);
+	static int SetScene(lua_State *L);
+	static map<string, string> LoadPlayer(string nameFile);
 };
 

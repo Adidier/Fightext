@@ -133,5 +133,8 @@
     <None Include="ExternalLibs\FlexBision\Parser.y">
       <Filter>Archivos de origen</Filter>
     </None>
+    <None Include="E:\Parser.l">
+      <Filter>base</Filter>
+    </None>
   </ItemGroup>
 </Project>

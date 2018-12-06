@@ -92,6 +92,20 @@ void KPlatform::renderTexture(KImage *tex, int x, int y)
 	renderTexture(tex->getTexture(), renderer, dst);
 }
 
+void KPlatform::renderTextByCharacter(const std::string &message, const std::string &fontFile, int index)
+{
+	if (message.size() == 0)
+		return;
+
+	SDL_Color color = { 0, 0, 0, 255 };
+	SDL_Texture *image = renderText(message.substr(0, index).c_str(), "sample.ttf", color, 64, renderer);
+	SDL_Rect dst;
+	dst.x = 0;
+	dst.y = 0;
+	SDL_QueryTexture(image, NULL, NULL, &dst.w, &dst.h);
+	renderTexture(image, renderer, dst);
+}
+
 void KPlatform::renderText(const std::string &message, const std::string &fontFile)
 {
 	if (message.size() == 0)

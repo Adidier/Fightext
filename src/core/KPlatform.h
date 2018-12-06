@@ -47,6 +47,7 @@ public:
 
 	static KImage* CreateImage(std::string name);
 	void renderText(const std::string &message, const std::string &fontFile);
+	void renderTextByCharacter(const std::string &message, const std::string &fontFile, int index);
 private:
 	SDL_Texture * renderText(const std::string &message, const std::string &fontFile, SDL_Color color, int fontSize, SDL_Renderer *renderer);
 	void renderTexture(KImage *tex, int x, int y);
