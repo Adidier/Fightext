@@ -92,18 +92,20 @@ void KPlatform::renderTexture(KImage *tex, int x, int y)
 	renderTexture(tex->getTexture(), renderer, dst);
 }
 
-void KPlatform::renderTextByCharacter(const std::string &message, const std::string &fontFile, int index)
+void KPlatform::renderTextByCharacter(const std::string &message, const std::string &fontFile, int index,int posy)
 {
 	if (message.size() == 0)
 		return;
-
+	
 	SDL_Color color = { 0, 0, 0, 255 };
-	SDL_Texture *image = renderText(message.substr(0, index).c_str(), "sample.ttf", color, 64, renderer);
+	SDL_Texture *image = renderText(message.substr(0, index).c_str(), fontFile.c_str(), color, 64, renderer);
 	SDL_Rect dst;
 	dst.x = 0;
-	dst.y = 0;
+	dst.y = posy;
 	SDL_QueryTexture(image, NULL, NULL, &dst.w, &dst.h);
 	renderTexture(image, renderer, dst);
+	
+	
 }
 
 void KPlatform::renderText(const std::string &message, const std::string &fontFile)
@@ -128,7 +130,7 @@ SDL_Texture* KPlatform::renderText(const std::string &message, const std::string
 		std::cout << "TTF_OpenFont";
 		return nullptr;
 	}
-	SDL_Surface *surf = TTF_RenderText_Blended(font, message.c_str(), color);
+	SDL_Surface *surf = TTF_RenderText_Blended_Wrapped(font, message.c_str(), color,950);
 	if (surf == nullptr) {
 		TTF_CloseFont(font);
 		std::cout << "TTF_RenderText";
@@ -143,14 +145,21 @@ SDL_Texture* KPlatform::renderText(const std::string &message, const std::string
 	return texture;
 }
 
-void KPlatform::checkEvent(KGameState *obj, bool (KGameState::*f)(int))
+void KPlatform::checkEvent(KGameState *obj, bool (KGameState::*f)(int,int,int))
 {
 	SDL_Event e;
 	while (SDL_PollEvent(&e)) {
 		if (e.type == SDL_KEYDOWN) {
-				(obj->*f)(e.key.keysym.sym);
+				(obj->*f)(e.key.keysym.sym,0,0);
+		}
+		if (e.type == SDL_MOUSEBUTTONDOWN)
+		{
+			(obj->*f)(-1, e.motion.x, e.motion.y);
+
 		}
 	}
+
+
 }
 void KPlatform::RenderClear()
 {

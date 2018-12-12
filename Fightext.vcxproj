@@ -22,6 +22,7 @@
     <Text Include="src\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\AudioClass.cpp" />
     <ClCompile Include="src\base\IntroState.cpp" />
     <ClCompile Include="src\base\MenuState.cpp" />
     <ClCompile Include="src\base\PlayState.cpp" />
@@ -41,6 +42,7 @@
     <ClCompile Include="src\Parser.tab.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\AudioClass.h" />
     <ClInclude Include="src\base\IntroState.h" />
     <ClInclude Include="src\base\MenuState.h" />
     <ClInclude Include="src\base\PlayState.h" />
@@ -59,7 +61,6 @@
     <ClInclude Include="src\Parser.tab.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="E:\Parser.l" />
     <None Include="ExternalLibs\FlexBision\Parser.l" />
     <None Include="ExternalLibs\FlexBision\Parser.y" />
   </ItemGroup>

@@ -75,6 +75,9 @@
     <ClCompile Include="src\core\KImage.cpp">
       <Filter>core</Filter>
     </ClCompile>
+    <ClCompile Include="src\AudioClass.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ManagerAction.h">
@@ -125,6 +128,9 @@
     <ClInclude Include="src\core\KImage.h">
       <Filter>core</Filter>
     </ClInclude>
+    <ClInclude Include="src\AudioClass.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ExternalLibs\FlexBision\Parser.l">
@@ -132,9 +138,6 @@
     </None>
     <None Include="ExternalLibs\FlexBision\Parser.y">
       <Filter>Archivos de origen</Filter>
-    </None>
-    <None Include="E:\Parser.l">
-      <Filter>base</Filter>
     </None>
   </ItemGroup>
 </Project>

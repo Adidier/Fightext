@@ -51,11 +51,16 @@ void MenuState::Enter(KPlatform *oViewer) {
     init();
 }
 
-bool MenuState::Press(int key)
+bool MenuState::Press(int key, int x, int y)
 {
-	KGameManager * kGameManager = KGameManager::getSingletonPtr();
-	kGameManager->ChangeState(PlayState::getSingletonPtr());;
-
+	if (key == -1)
+	{
+		if (x > 41 && x < 427 && y>555 && y < 677)
+		{
+			KGameManager * kGameManager = KGameManager::getSingletonPtr();
+			kGameManager->ChangeState(PlayState::getSingletonPtr());;
+		}
+	}
 	return false;
 }
 

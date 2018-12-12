@@ -15,8 +15,8 @@ private:
 	KImage * img;
 	
 public:
-	History(string nameFile);
+	History(string nameFile, KPlatform *oContext);
 	KImage *getImage();
 	~History();
-	map<string, string> history;
+	map<string, Scene> history;
 };

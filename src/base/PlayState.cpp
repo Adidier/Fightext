@@ -5,19 +5,13 @@
 
 PlayState* PlayState::oPlayState;
 
+std::string PlayState::state="introduccion";
+
 PlayState* PlayState::getSingletonPtr( void ){
-    if( !oPlayState ) {
-        oPlayState = new PlayState();
-    if (oPlayState)
-   	{
-		
-		return oPlayState;
-  	}
-    	else
-    	{
-        	return nullptr;
-    	}
-    }
+	if (!oPlayState) {
+		oPlayState = new PlayState();
+	}
+	return oPlayState;
 }
 
 void PlayState::Pause( void ) { 
@@ -28,16 +22,30 @@ void PlayState::Resume( void ) {
 
 }
 
+
+void PlayState::ChangeState(std::string _state)
+{
+	for (auto &x :history->history[state].jumps)
+	{
+		if (x==_state)
+		{
+			state = _state;
+		}
+	}
+}
+
 bool PlayState::Parser(string command)
 {
-	command = "ataque=pega\n";
 	yy_scan_string((char *)command.c_str());
 	yyparse();
 	return false;
 }
 
-bool PlayState::Press(int key)
+bool PlayState::Press(int key,int x,int y)
 {
+	if(!isKeyboardEnable)
+		return false;
+
 	if(key>= '0' && key <= 'z' || key == ' ')
 		consoleBuffer += (char)key;
 	else if (key == '\r')
@@ -48,38 +56,45 @@ bool PlayState::Press(int key)
 	{
 		consoleBuffer = consoleBuffer.substr(0, consoleBuffer.size() - 1);
 	}
-
 	return false;
 }
 
 void PlayState::Update(double dTimeElapsed) {
-
+	
 	oContext->checkEvent(this, &KGameState::Press);
 
 	oContext->RenderClear();
-
-	oContext->RenderImage(menuBackground, 0, 0);
-	oContext->RenderImage(waifu, 700, 0);
-	oContext->renderTextByCharacter(history->history["Introduccion"].c_str(), "Arial.ttf", currentTextIndex);
-	if (currentTextIndex < history->history["Introduccion"].length())
+	oContext->RenderImage(history->history[state].menuBackground, 0, 0);
+	oContext->RenderImage(history->history[state].waifu, 0, 300);
+	oContext->renderTextByCharacter(history->history[state].history.c_str(), "comici.ttf", currentTextIndex,posy);
+	if (currentTextIndex < history->history[state].history.length())
 	{
 		SDL_Delay(100);
 		currentTextIndex++;
+		aiudaa++;
 	}
 	else
 	{
-
+		isKeyboardEnable = true;
 	}
-
-
+	if (isKeyboardEnable)
+	{
+		oContext->renderText(consoleBuffer, "comici.ttf");
+	}
+	if (aiudaa > 40)
+	{
+		posy -= 60;
+		aiudaa = 0;
+	}
 	oContext->RenderPresent();
+	std::cout << aiudaa<<endl;	
 }
 
 void PlayState::Exit( void ) {
 
 }
 
-PlayState::PlayState( void ): currentText("Adidier es cool") {
+PlayState::PlayState( void ): isKeyboardEnable(false){
 
 }
 
@@ -89,15 +104,17 @@ PlayState::~PlayState( void ){
 
 bool PlayState::init( void ){
 
-	menuBackground = oContext->CreateImage("./Assets/backgrounds/Parque.png");
-	waifu = oContext->CreateImage("./Assets/LoveLive/Maki2.png");
+
+
 	return true;
 }
 
 void PlayState::Enter(KPlatform *_oViewer) {
 	oContext = _oViewer;
-	history = new History("mexican");
+	history = new History("./Assets/rescatado", oContext);
+
 	init();
+
 
 }
 

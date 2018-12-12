@@ -48,8 +48,14 @@ extern int yydebug;
    enum yytokentype {
      IDENTIFIER = 258,
      EQUAL = 259,
-     ATTACK = 260,
-     EOL = 261
+     AYUDARLA = 260,
+     ALEJARTE = 261,
+     VAMOS = 262,
+     SOLA = 263,
+     CONTINUAR = 264,
+     ADELANTARSE = 265,
+     ATTACK = 266,
+     EOL = 267
    };
 #endif
 
@@ -58,13 +64,13 @@ extern int yydebug;
 typedef union YYSTYPE
 {
 /* Line 2058 of yacc.c  */
-#line 15 "Parser.y"
+#line 17 "Parser.y"
 
 	char	*sval;
 
 
 /* Line 2058 of yacc.c  */
-#line 68 "..\\..\\src\\Parser.tab.h"
+#line 74 "..\\..\\src\\Parser.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

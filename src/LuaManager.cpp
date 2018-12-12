@@ -1,17 +1,27 @@
 #include "LuaManager.h"
 #include <map>
-std::map<string,string> LuaManager::history;
+std::map<string, Scene> LuaManager::history;
 
 int LuaManager::SetScene(lua_State *L)
 {
-	const char* str = lua_tostring(L, 1);
+	const char* str1 = lua_tostring(L, 1);
 	const char* str2 = lua_tostring(L, 2);
-	history[str] = str2;
+	const char* str3 = lua_tostring(L, 3);
+	const char* str4 = lua_tostring(L, 4);
+	const char* str5 = lua_tostring(L, 5);
+	const char* str6 = lua_tostring(L, 6);
+	Scene scene;
+	scene.history = str6;
+	scene.background = str2;
+	scene.image = str3;
+	scene.jumps.push_back(str4);
+	scene.jumps.push_back(str5);
+	history[str1] = scene;
 	return 0;
 }
 
 
-map<string, string> LuaManager::LoadPlayer(string nameFile)
+map<string, Scene> LuaManager::LoadPlayer(string nameFile)
 {
 	history.clear();
 	lua_State* L = luaL_newstate();

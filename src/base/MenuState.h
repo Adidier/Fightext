@@ -13,7 +13,7 @@ public:
     void Pause( void );
     void Resume( void );
     void Update( double lTimeElapsed );
-	bool Press(int key);
+	bool Press(int key, int x, int y);
     static MenuState* getSingletonPtr( void );
 private: 
     MenuState( void );

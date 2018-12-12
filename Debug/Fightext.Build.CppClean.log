@@ -1,5 +1,6 @@
 c:\dev\fightext\debug\vc141.pdb
 c:\dev\fightext\debug\vc141.idb
+c:\dev\fightext\debug\audioclass.obj
 c:\dev\fightext\debug\introstate.obj
 c:\dev\fightext\debug\menustate.obj
 c:\dev\fightext\debug\playstate.obj
@@ -20,6 +21,7 @@ c:\dev\fightext\debug\parser.tab.obj
 c:\dev\fightext\debug\fightext.ilk
 c:\dev\fightext\debug\fightext.exe
 c:\dev\fightext\debug\fightext.pdb
+c:\dev\fightext\debug\playstate.obj.enc
 c:\dev\fightext\debug\fightext.tlog\cl.command.1.tlog
 c:\dev\fightext\debug\fightext.tlog\cl.read.1.tlog
 c:\dev\fightext\debug\fightext.tlog\cl.write.1.tlog

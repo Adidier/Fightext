@@ -17,10 +17,11 @@ public:
     void Exit( void );
     void Pause( void );
     void Resume( void );
+	void ChangeState(std::string state);
     void Update( double lTimeElapsed );
     static PlayState* getSingletonPtr( void );
 
-	bool Press(int key);
+	bool Press(int key, int x, int y);
 	bool Parser(string command);
 private:
 	PlayState( void );
@@ -29,13 +30,17 @@ private:
 	static PlayState *oPlayState;
 	std::string currentText;
 	int currentTextIndex = 0;
+	int aiudaa = 0;
+	int posy = 0;
+	
 protected:
-	KImage * menuBackground;
-	KImage * waifu;
+
 
 	std::string consoleBuffer;
 	History *history;
     KPlatform *oViewer;
+	bool isKeyboardEnable;
+	static std::string state;
 
     
    

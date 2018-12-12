@@ -66,8 +66,10 @@
 #line 1 "Parser.y"
 
 #include <stdio.h>
+#include <iostream>
 #include "Parser.flex.h"
 #include "ManagerAction.h"
+#include "PlayState.h"
 	int yywrap(void)
 	{
 	return 0;
@@ -77,7 +79,7 @@
 	}
 
 /* Line 371 of yacc.c  */
-#line 81 "..\\..\\src\\Parser.tab.cpp"
+#line 83 "..\\..\\src\\Parser.tab.cpp"
 
 # ifndef YY_NULL
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -115,8 +117,14 @@ extern int yydebug;
    enum yytokentype {
      IDENTIFIER = 258,
      EQUAL = 259,
-     ATTACK = 260,
-     EOL = 261
+     AYUDARLA = 260,
+     ALEJARTE = 261,
+     VAMOS = 262,
+     SOLA = 263,
+     CONTINUAR = 264,
+     ADELANTARSE = 265,
+     ATTACK = 266,
+     EOL = 267
    };
 #endif
 
@@ -125,13 +133,13 @@ extern int yydebug;
 typedef union YYSTYPE
 {
 /* Line 387 of yacc.c  */
-#line 15 "Parser.y"
+#line 17 "Parser.y"
 
 	char	*sval;
 
 
 /* Line 387 of yacc.c  */
-#line 135 "..\\..\\src\\Parser.tab.cpp"
+#line 143 "..\\..\\src\\Parser.tab.cpp"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -159,7 +167,7 @@ int yyparse ();
 /* Copy the second part of user declarations.  */
 
 /* Line 390 of yacc.c  */
-#line 163 "..\\..\\src\\Parser.tab.cpp"
+#line 171 "..\\..\\src\\Parser.tab.cpp"
 
 #ifdef short
 # undef short
@@ -377,22 +385,22 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  4
+#define YYFINAL  8
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   3
+#define YYLAST   6
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  7
+#define YYNTOKENS  13
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  2
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  3
+#define YYNRULES  8
 /* YYNRULES -- Number of states.  */
-#define YYNSTATES  6
+#define YYNSTATES  9
 
 /* YYTRANSLATE(YYLEX) -- Bison symbol number corresponding to YYLEX.  */
 #define YYUNDEFTOK  2
-#define YYMAXUTOK   261
+#define YYMAXUTOK   267
 
 #define YYTRANSLATE(YYX)						\
   ((unsigned int) (YYX) <= YYMAXUTOK ? yytranslate[YYX] : YYUNDEFTOK)
@@ -426,7 +434,7 @@ static const yytype_uint8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
-       5,     6
+       5,     6,     7,     8,     9,    10,    11,    12
 };
 
 #if YYDEBUG
@@ -434,19 +442,20 @@ static const yytype_uint8 yytranslate[] =
    YYRHS.  */
 static const yytype_uint8 yyprhs[] =
 {
-       0,     0,     3,     4
+       0,     0,     3,     4,     6,     8,    10,    12,    14
 };
 
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
 static const yytype_int8 yyrhs[] =
 {
-       8,     0,    -1,    -1,     5,     4,     3,    -1
+      14,     0,    -1,    -1,     5,    -1,     6,    -1,     7,    -1,
+       8,    -1,     9,    -1,    10,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    25,    25,    26
+       0,    33,    33,    34,    37,    38,    39,    40,    41
 };
 #endif
 
@@ -455,7 +464,8 @@ static const yytype_uint8 yyrline[] =
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "$end", "error", "$undefined", "IDENTIFIER", "EQUAL", "ATTACK", "EOL",
+  "$end", "error", "$undefined", "IDENTIFIER", "EQUAL", "AYUDARLA",
+  "ALEJARTE", "VAMOS", "SOLA", "CONTINUAR", "ADELANTARSE", "ATTACK", "EOL",
   "$accept", "action", YY_NULL
 };
 #endif
@@ -465,20 +475,21 @@ static const char *const yytname[] =
    token YYLEX-NUM.  */
 static const yytype_uint16 yytoknum[] =
 {
-       0,   256,   257,   258,   259,   260,   261
+       0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
+     265,   266,   267
 };
 # endif
 
 /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,     7,     8,     8
+       0,    13,    14,    14,    14,    14,    14,    14,    14
 };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     0,     3
+       0,     2,     0,     1,     1,     1,     1,     1,     1
 };
 
 /* YYDEFACT[STATE-NAME] -- Default reduction number in state STATE-NUM.
@@ -486,13 +497,13 @@ static const yytype_uint8 yyr2[] =
    means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       2,     0,     0,     0,     1,     3
+       2,     3,     4,     5,     6,     7,     8,     0,     1
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     2
+      -1,     7
 };
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
@@ -500,7 +511,7 @@ static const yytype_int8 yydefgoto[] =
 #define YYPACT_NINF -6
 static const yytype_int8 yypact[] =
 {
-      -5,    -3,     2,     0,    -6,    -6
+      -5,    -6,    -6,    -6,    -6,    -6,    -6,     6,    -6
 };
 
 /* YYPGOTO[NTERM-NUM].  */
@@ -515,7 +526,7 @@ static const yytype_int8 yypgoto[] =
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
 {
-       1,     3,     4,     5
+       1,     2,     3,     4,     5,     6,     8
 };
 
 #define yypact_value_is_default(Yystate) \
@@ -526,14 +537,14 @@ static const yytype_uint8 yytable[] =
 
 static const yytype_uint8 yycheck[] =
 {
-       5,     4,     0,     3
+       5,     6,     7,     8,     9,    10,     0
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
    symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,     5,     8,     4,     0,     3
+       0,     5,     6,     7,     8,     9,    10,    14,     0
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1335,13 +1346,45 @@ yyreduce:
     {
         case 3:
 /* Line 1792 of yacc.c  */
-#line 26 "Parser.y"
-    {  ManagerAction::getPtr()->SetAttack(yytext); }
+#line 34 "Parser.y"
+    { std::cout<<"ayudarla"; 
+	PlayState::getSingletonPtr()->ChangeState("introduccion");
+}
+    break;
+
+  case 4:
+/* Line 1792 of yacc.c  */
+#line 37 "Parser.y"
+    { PlayState::getSingletonPtr()->ChangeState("alejarte") ;}
+    break;
+
+  case 5:
+/* Line 1792 of yacc.c  */
+#line 38 "Parser.y"
+    { PlayState::getSingletonPtr()->ChangeState("vamos");}
+    break;
+
+  case 6:
+/* Line 1792 of yacc.c  */
+#line 39 "Parser.y"
+    {PlayState::getSingletonPtr()->ChangeState("sola") ;}
+    break;
+
+  case 7:
+/* Line 1792 of yacc.c  */
+#line 40 "Parser.y"
+    { PlayState::getSingletonPtr()->ChangeState("continuar");}
+    break;
+
+  case 8:
+/* Line 1792 of yacc.c  */
+#line 41 "Parser.y"
+    { PlayState::getSingletonPtr()->ChangeState("adelantarse") ;}
     break;
 
 
 /* Line 1792 of yacc.c  */
-#line 1345 "..\\..\\src\\Parser.tab.cpp"
+#line 1388 "..\\..\\src\\Parser.tab.cpp"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1573,4 +1616,4 @@ yyreturn:
 
 
 /* Line 2055 of yacc.c  */
-#line 29 "Parser.y"
+#line 44 "Parser.y"

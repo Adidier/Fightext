@@ -19,7 +19,7 @@ public:
     void PushState( KGameState *state );
     void PopState( void );
     void RequestShutdown( void );
-	virtual bool Press(int key) { return false; };
+	virtual bool Press(int key,int x,int y) { return false; };
     void SetScaleFactor(float fScaleFactor);
 protected:
     KGameState( void ) { }
